@@ -15,7 +15,7 @@ inotifywait -m ./ -e create -e moved_to |
         	rm -rf ../plume_deploy/$id
         fi;
         mkdir ../plume_deploy/$id
-        gzip -dc $file | tar -C ../plume_deploy/$id -xvzf -
+        tar -C ../plume_deploy/$id -xvzf $file
         env_temp=$(pwd)/.env.template
 
         pushd ../plume_deploy/$id
