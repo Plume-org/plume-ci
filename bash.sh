@@ -1,6 +1,12 @@
 #!/bin/bash
 set -x
 
+currently_running=$(docker container ls | grep -Eo 'plume-pr-[0-9]+' | cut -c10- | tr '\n' ',')
+cat Caddyfile.base *.caddy > Caddyfile
+[ -z "$currently_running" ] &&\
+	echo '[]' > static/up.json ||\
+	echo '['"${currently_running::-1}"']' > static/up.json
+
 caddy &
 caddy_pid=$!
 
