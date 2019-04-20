@@ -2,3 +2,4 @@
 Caddyfile
 Caddyfile.*
 !Caddyfile.template
+!Caddyfile.base

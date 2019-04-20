@@ -1,0 +1,4 @@
+localhost {
+	root ./static
+	tls off
+}
