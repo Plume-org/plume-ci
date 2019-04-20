@@ -40,6 +40,7 @@ inotifywait -m ./ -e create -e moved_to |
         fi;
 
         cont=plume-pr-$id
+        docker container rm $cont || true
         docker run -td --name $cont --rm -p 127.0.0.1:$port:7878 --mount type=bind,src=$(pwd),dst=/app plumeorg/plume-buildenv:v0.0.5
         docker exec -w /app $cont ls -al
         docker exec -w /app $cont /app/bin/diesel migration run
@@ -50,8 +51,14 @@ inotifywait -m ./ -e create -e moved_to |
 
         popd
 
-        sed -e "s;%BASE_URL%;$domain;g" -e "s;%PORT%;$port;g" Caddyfile.template | tee Caddyfile.$id
-        cat Caddyfile.$id Caddyfile | tee Caddyfile
+        #get comma separated list of running containers
+        currently_running=$(docker container ls | grep -Eo 'plume-pr-[0-9]+' | cut -c10- | tr '\n' ',')
+
+        #remove trailing ',' and convert to json
+        echo '['"${currently_running::-1}"']' > static/up.json
+
+        sed -e "s;%BASE_URL%;$domain;g" -e "s;%PORT%;$port;g" Caddyfile.template > $id.caddy
+        cat Caddyfile.base *.caddy > Caddyfile
         kill $caddy_pid
         caddy &
         caddy_pid=$!

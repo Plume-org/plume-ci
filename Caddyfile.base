@@ -1,0 +1,4 @@
+pr-list.joinplu.me {
+	root ./static
+	tls off
+}
