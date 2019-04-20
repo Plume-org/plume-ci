@@ -1,9 +1,12 @@
 #!/bin/bash
 set -x
 
+caddy &
+caddy_pid=$!
+
 inotifywait -m ./ -e create -e moved_to |
     while read path action file; do
-    	if [[ ! $file =~ ".tar.gz" ]]; then
+    	if [[ ! $file =~ ^[0-9]*\.tar\.gz$ ]]; then
     		continue
     	fi;
 
@@ -30,6 +33,12 @@ inotifywait -m ./ -e create -e moved_to |
         done;
 		sed -e "s;%BASE_URL%;$domain;g" -e "s;%SECRET%;$secret;g" $env_temp | tee .env
 
+        # Kill old instance, if there are more than 5 running
+        if [ $(sudo docker ps | grep plume-pr | wc -l) -ge 5 ]; then
+            to_kill=$(sudo docker ps | grep plume-pr | tail -n 1 | awk 'NF>1{print $NF}')
+            docker stop $to_kill
+        fi;
+
         cont=plume-pr-$id
         docker run -td --name $cont --rm -p 127.0.0.1:$port:7878 --mount type=bind,src=$(pwd),dst=/app plumeorg/plume-buildenv:v0.0.5
         docker exec -w /app $cont ls -al
@@ -42,6 +51,9 @@ inotifywait -m ./ -e create -e moved_to |
         popd
 
         sed -e "s;%BASE_URL%;$domain;g" -e "s;%PORT%;$port;g" Caddyfile.template | tee Caddyfile.$id
-        cat Caddyfile Caddyfile.$id > Caddyfile
+        cat Caddyfile.$id Caddyfile | tee Caddyfile
+        kill $caddy_pid
+        caddy &
+        caddy_pid=$!
     done
 
