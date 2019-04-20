@@ -1,0 +1,6 @@
+%BASE_URL% {
+	proxy / localhost:%PORT% {
+		transparent
+	}
+	tls off
+}
