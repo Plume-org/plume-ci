@@ -13,6 +13,9 @@ fetch('/up.json')
 					const linkTest = document.createElement('a')
 					linkTest.href = `https://pr-${id}.joinplu.me/`
 					linkTest.innerText = `#${id}: ${json.title || ''}`
+					const linkLogs = document.createElement('a')
+					linkLogs.href = `/log_viewer?${id}`
+					linkLogs.innerText = '(view logs)'
 					const linkGitHub = document.createElement('a')
 					linkGitHub.href = `https://github.com/Plume-org/Plume/pull/${id}`
 					linkGitHub.innerText = 'View on Github'
@@ -20,6 +23,8 @@ fetch('/up.json')
 					const pTest = document.createElement('p')
 					pTest.classList.add('grow')
 					pTest.appendChild(linkTest)
+					pTest.append(" ⋅ ")
+					pTest.appendChild(linkLogs)
 					const pGitHub = document.createElement('p')
 					pGitHub.appendChild(linkGitHub)
 
