@@ -1,0 +1,115 @@
+[34m🔧 Configured for development.[0m
+    [1;49;39m=>[0m [34maddress: [1;49;39m0.0.0.0[0m[34m[0m
+    [1;49;39m=>[0m [34mport: [1;49;39m7878[0m[34m[0m
+    [1;49;39m=>[0m [34mlog: [1;49;39mnormal[0m[34m[0m
+    [1;49;39m=>[0m [34mworkers: [1;49;39m4[0m[34m[0m
+    [1;49;39m=>[0m [34msecret key: [1;49;39mprovided[0m[34m[0m
+    [1;49;39m=>[0m [34mlimits: [1;49;39mforms = 128KiB, json* = 1MiB[0m[34m[0m
+    [1;49;39m=>[0m [34mkeep-alive: [1;49;39m5s[0m[34m[0m
+    [1;49;39m=>[0m [34mtls: [1;49;39mdisabled[0m[34m[0m
+[34m🛰  [35mMounting[0m[34m [34m/[0m[34m[35m:[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/~/<name>?<page>[0m[34m [[1;49;39m2[0m[34m] [36m([0m[34m[35mdetails[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/~/<name>[0m[34m [36m([0m[34m[35mactivity_details[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/~/<name>/outbox[0m[34m [36m([0m[34m[35moutbox[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/blogs/new[0m[34m [36m([0m[34m[35mnew[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/blogs/new[0m[34m [[1;49;39m2[0m[34m] [36m([0m[34m[35mnew_auth[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/blogs/new[0m[34m [36m([0m[34m[35mcreate[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/~/<name>/delete[0m[34m [36m([0m[34m[35mdelete[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/~/<name>/edit[0m[34m [36m([0m[34m[35medit[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPUT[0m[34m [34m/~/<name>/edit[0m[34m [36m([0m[34m[35mupdate[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/~/<name>/atom.xml[0m[34m [36m([0m[34m[35matom_feed[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/~/<blog_name>/<slug>/comment[0m[34m [36m([0m[34m[35mcreate[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/~/<blog>/<slug>/comment/<id>/delete[0m[34m [36m([0m[34m[35mdelete[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/~/<_blog>/<_slug>/comment/<id>[0m[34m [36m([0m[34m[35mactivity_pub[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/[0m[34m [36m([0m[34m[35mindex[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/local?<page>[0m[34m [36m([0m[34m[35mlocal[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/feed?<page>[0m[34m [36m([0m[34m[35mfeed[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/federated?<page>[0m[34m [36m([0m[34m[35mfederated[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/admin[0m[34m [36m([0m[34m[35madmin[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/admin/instances?<page>[0m[34m [36m([0m[34m[35madmin_instances[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/admin/users?<page>[0m[34m [36m([0m[34m[35madmin_users[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/admin/users/<id>/ban[0m[34m [36m([0m[34m[35mban[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/admin/instances/<id>/block[0m[34m [36m([0m[34m[35mtoggle_block[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/admin[0m[34m [36m([0m[34m[35mupdate_settings[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/inbox[0m[34m [36m([0m[34m[35mshared_inbox[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/remote_interact?<target>[0m[34m [36m([0m[34m[35minteract[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/nodeinfo/<version>[0m[34m [36m([0m[34m[35mnodeinfo[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/about[0m[34m [36m([0m[34m[35mabout[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/manifest.json[0m[34m [36m([0m[34m[35mweb_manifest[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/~/<blog>/<slug>/like[0m[34m [36m([0m[34m[35mcreate[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/~/<blog>/<slug>/like[0m[34m [[1;49;39m2[0m[34m] [36m([0m[34m[35mcreate_auth[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/medias?<page>[0m[34m [36m([0m[34m[35mlist[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/medias/new[0m[34m [36m([0m[34m[35mnew[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/medias/new[0m[34m [36m([0m[34m[35mupload[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/medias/<id>[0m[34m [36m([0m[34m[35mdetails[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/medias/<id>/delete[0m[34m [36m([0m[34m[35mdelete[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/medias/<id>/avatar[0m[34m [36m([0m[34m[35mset_avatar[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/notifications?<page>[0m[34m [36m([0m[34m[35mnotifications[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/notifications?<page>[0m[34m [[1;49;39m2[0m[34m] [36m([0m[34m[35mnotifications_auth[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/~/<blog>/<slug>?<responding_to>[0m[34m [[1;49;39m4[0m[34m] [36m([0m[34m[35mdetails[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/~/<blog>/<slug>[0m[34m [[1;49;39m3[0m[34m] [36m([0m[34m[35mactivity_details[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/~/<blog>/<slug>/edit[0m[34m [36m([0m[34m[35medit[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/~/<blog>/<slug>/edit[0m[34m [36m([0m[34m[35mupdate[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/~/<blog>/new[0m[34m [36m([0m[34m[35mnew[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/~/<blog>/new[0m[34m [[1;49;39m2[0m[34m] [36m([0m[34m[35mnew_auth[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/~/<blog_name>/new[0m[34m [36m([0m[34m[35mcreate[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/~/<blog_name>/<slug>/delete[0m[34m [36m([0m[34m[35mdelete[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/~/<blog_name>/<slug>/remote_interact[0m[34m [36m([0m[34m[35mremote_interact[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/~/<blog_name>/<slug>/remote_interact[0m[34m [36m([0m[34m[35mremote_interact_post[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/~/<blog>/<slug>/reshare[0m[34m [36m([0m[34m[35mcreate[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/~/<blog>/<slug>/reshare[0m[34m [36m([0m[34m[35mcreate_auth[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/search?<query..>[0m[34m [36m([0m[34m[35msearch[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/login?<m>[0m[34m [36m([0m[34m[35mnew[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/login[0m[34m [36m([0m[34m[35mcreate[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/logout[0m[34m [36m([0m[34m[35mdelete[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/password-reset[0m[34m [36m([0m[34m[35mpassword_reset_request_form[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/password-reset[0m[34m [36m([0m[34m[35mpassword_reset_request[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/password-reset/<token>[0m[34m [36m([0m[34m[35mpassword_reset_form[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/password-reset/<token>[0m[34m [36m([0m[34m[35mpassword_reset[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/static/cached/<_build_id>/<file..>[0m[34m [[1;49;39m2[0m[34m] [36m([0m[34m[35mplume_static_files[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/static/<file..>[0m[34m [[1;49;39m3[0m[34m] [36m([0m[34m[35mstatic_files[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/tag/<name>?<page>[0m[34m [36m([0m[34m[35mtag[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/me[0m[34m [36m([0m[34m[35mme[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/@/<name>[0m[34m [[1;49;39m2[0m[34m] [36m([0m[34m[35mdetails[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/dashboard[0m[34m [36m([0m[34m[35mdashboard[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/dashboard[0m[34m [[1;49;39m2[0m[34m] [36m([0m[34m[35mdashboard_auth[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/@/<name>/followers?<page>[0m[34m [[1;49;39m2[0m[34m] [36m([0m[34m[35mfollowers[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/@/<name>/followed?<page>[0m[34m [[1;49;39m2[0m[34m] [36m([0m[34m[35mfollowed[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/@/<name>/edit[0m[34m [36m([0m[34m[35medit[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/@/<name>/edit[0m[34m [[1;49;39m2[0m[34m] [36m([0m[34m[35medit_auth[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPUT[0m[34m [34m/@/<_name>/edit[0m[34m [36m([0m[34m[35mupdate[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/@/<name>/delete[0m[34m [36m([0m[34m[35mdelete[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/@/<name>/follow[0m[34m [36m([0m[34m[35mfollow[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/@/<name>/follow[0m[34m [[1;49;39m2[0m[34m] [36m([0m[34m[35mfollow_not_connected[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/@/<name>/follow?local[0m[34m [[1;49;39m2[0m[34m] [36m([0m[34m[35mfollow_auth[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/@/<name>[0m[34m [36m([0m[34m[35mactivity_details[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/@/<name>/outbox[0m[34m [36m([0m[34m[35moutbox[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/@/<name>/inbox[0m[34m [36m([0m[34m[35minbox[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/@/<name>/followers[0m[34m [36m([0m[34m[35map_followers[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/users/new[0m[34m [36m([0m[34m[35mnew[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/users/new[0m[34m [36m([0m[34m[35mcreate[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/@/<name>/atom.xml[0m[34m [36m([0m[34m[35matom_feed[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/.well-known/host-meta[0m[34m [36m([0m[34m[35mhost_meta[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/.well-known/nodeinfo[0m[34m [36m([0m[34m[35mnodeinfo[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/.well-known/webfinger?<resource>[0m[34m [36m([0m[34m[35mwebfinger[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/csrf-violation?<target>[0m[34m [36m([0m[34m[35mcsrf_violation[0m[34m[36m)[0m[34m[0m
+[34m🛰  [35mMounting[0m[34m [34m/api/v1[0m[34m[35m:[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/api/v1/oauth2?<query..>[0m[34m [36m([0m[34m[35moauth[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/api/v1/apps[0m[34m [36m([0m[34m[35mcreate[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/api/v1/posts/<id>[0m[34m [36m([0m[34m[35mget[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mGET[0m[34m [34m/api/v1/posts?<title>&<subtitle>&<content>[0m[34m [36m([0m[34m[35mlist[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mPOST[0m[34m [34m/api/v1/posts[0m[34m [36m([0m[34m[35mcreate[0m[34m[36m)[0m[34m[0m
+    [1;49;39m=>[0m [34m[32mDELETE[0m[34m [34m/api/v1/posts/<id>[0m[34m [36m([0m[34m[35mdelete[0m[34m[36m)[0m[34m[0m
+[34m👾 [35mCatchers:[0m[34m[0m
+    [1;49;39m=>[0m [34m[34m404[0m[34m[0m
+    [1;49;39m=>[0m [34m[34m422[0m[34m[0m
+    [1;49;39m=>[0m [34m[34m500[0m[34m[0m
+[34m📡 [35mFairings[0m[34m:[0m
+    [1;49;39m=>[0m [34m[1;49;39m1[0m[34m request: [1;49;39mCSRF protection[0m[34m[0m
+    [1;49;39m=>[0m [34m[1;49;39m1[0m[34m response: [1;49;39mCSRF protection[0m[34m[0m
+[34m🚀 [1;49;39mRocket has launched from[0m[34m [1;4;49;39mhttp://[0m[34m[1;4;49;39m0.0.0.0:7878[0m[34m[0m
+[34mPreparing commit[0m
+[34mPrepared commit 0[0m
+[34mcommitting 0[0m
+[34mRunning garbage collection[0m
+[34mGarbage collect[0m
