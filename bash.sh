@@ -54,7 +54,7 @@ inotifywait -m ./ -e create -e moved_to |
         docker exec -w /app $cont /app/bin/plm instance new -n "PR #$id" > $log_dir/$id
         docker exec -w /app $cont /app/bin/plm users new -a -n admin -p admin123 -N "Admin #$id" -e "admin@$domain" > $log_dir/$id
         docker exec -w /app $cont /app/bin/plm search init > $log_dir/$id
-        docker exec -w /app $cont /app/bin/plume > $log_dir/$id &
+        docker exec -e ROCKET_ENV=dev -w /app $cont /app/bin/plume > $log_dir/$id &
 
         popd
 
