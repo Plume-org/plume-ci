@@ -1,4 +1,5 @@
 pr-list.joinplu.me {
 	root ./static
 	tls off
+	websocket /logs ./handle_ws.sh
 }
