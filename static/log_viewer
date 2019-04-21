@@ -26,8 +26,7 @@
         </header>
         <main>
         <h1>Logs for <span id="title"></span></h1>
-	<div id="logs" style="background-color: #000; color: #fff;">
-	</div>
+	<pre id="logs" style="background-color: #000; color: #fff;"></pre>
         </main>
         <footer>
             <span>Plume-ci 0.0.1</span>
