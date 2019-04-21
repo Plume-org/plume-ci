@@ -23,6 +23,7 @@ inotifywait -m ./ -e create -e moved_to |
         mkdir ../plume_deploy/$id
         tar -C ../plume_deploy/$id -xvzf $file
         env_temp=$(pwd)/.env.template
+	log_dir=$(pwd)/logs
 
         pushd ../plume_deploy/$id
 
@@ -53,6 +54,7 @@ inotifywait -m ./ -e create -e moved_to |
         docker exec -w /app $cont /app/bin/plm instance new -n "PR #$id"
         docker exec -w /app $cont /app/bin/plm users new -a -n admin -p admin123 -N "Admin #$id" -e "admin@$domain"
         docker exec -w /app $cont /app/bin/plm search init
+        docker container logs -f --since 0m $cont > $log_dir/$id &
         docker exec -w /app -d $cont /app/bin/plume
 
         popd
