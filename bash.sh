@@ -23,7 +23,7 @@ inotifywait -m ./ -e create -e moved_to |
         mkdir ../plume_deploy/$id
         tar -C ../plume_deploy/$id -xvzf $file
         env_temp=$(pwd)/.env.template
-	log_dir=$(pwd)/logs
+	    log_dir=$(pwd)/logs
 
         pushd ../plume_deploy/$id
 
@@ -47,7 +47,7 @@ inotifywait -m ./ -e create -e moved_to |
         fi;
 
         cont=plume-pr-$id
-        docker container rm $cont || true
+        docker container stop $cont || true
         docker run -td --name $cont --rm -p 127.0.0.1:$port:7878 --mount type=bind,src=$(pwd),dst=/app plumeorg/plume-buildenv:v0.0.5
         docker exec -w /app $cont ls -al
         docker exec -w /app $cont /app/bin/diesel migration run
