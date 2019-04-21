@@ -15,7 +15,7 @@ fetch('/up.json')
 					linkTest.innerText = `#${id}: ${json.title || ''}`
 					const linkLogs = document.createElement('a')
 					linkLogs.href = `/log_viewer?${id}`
-					linkLogs.innerText = '(view logs)'
+					linkLogs.innerText = 'View logs'
 					const linkGitHub = document.createElement('a')
 					linkGitHub.href = `https://github.com/Plume-org/Plume/pull/${id}`
 					linkGitHub.innerText = 'View on Github'
@@ -31,6 +31,7 @@ fetch('/up.json')
 					const li = document.createElement('li')
 					li.appendChild(pTest)
 					li.appendChild(pLogs)
+					li.appendChild(' — ')
 					li.appendChild(pGitHub)
 					li.classList.add('flex')
 					document.getElementById('list').appendChild(li)

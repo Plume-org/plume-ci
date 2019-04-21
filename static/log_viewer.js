@@ -16,7 +16,7 @@ fetch(`https://api.github.com/repos/Plume-org/Plume/pulls/${id}`, { mode: 'cors'
 const logs = document.getElementById("logs");
 const ansi_up = new AnsiUp();
 const template = document.createElement('template')
-const ws = new WebSocket(`ws://pr-list.joinplu.me/logs/${id}`)
+const ws = new WebSocket(`wss://pr-list.joinplu.me/logs/${id}`)
 ws.onmessage = (e) => {
 	var html = ansi_up.ansi_to_html(e.data);
 	template.innerHTML = html.trim();
