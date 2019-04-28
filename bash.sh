@@ -59,7 +59,7 @@ inotifywait -m ./ -e create -e moved_to |
         popd
 
         #get comma separated list of running containers
-        currently_running=$(docker container ls | grep -Eo 'plume-pr-[0-9]+' | cut -c10- | tr '\n' ',')
+        currently_running=$(docker container ls | grep -Eo 'plume-pr-[0-9]+' | cut -c10- | tr '\n' ',' | sort -r)
 
         #remove trailing ',' and convert to json
         echo '['"${currently_running::-1}"']' > static/up.json
