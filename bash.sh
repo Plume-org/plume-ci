@@ -50,7 +50,7 @@ inotifywait -m ./ -e create -e moved_to |
         docker container stop $cont || true
         docker run -td --name $cont --rm -p 127.0.0.1:$port:7878 --mount type=bind,src=$(pwd),dst=/app plumeorg/plume-buildenv:v0.0.5
         docker exec -w /app $cont ls -al > $log_dir/$id
-        docker exec -t -w /app $cont /app/bin/diesel migration run >> $log_dir/$id
+        docker exec -t -w /app $cont /app/bin/plm migration run >> $log_dir/$id
         docker exec -t -w /app $cont /app/bin/plm instance new -n "PR #$id" >> $log_dir/$id
         docker exec -t -w /app $cont /app/bin/plm users new -a -n admin -p admin123 -N "Admin #$id" -e "admin@$domain" >> $log_dir/$id
         docker exec -t -w /app $cont /app/bin/plm search init >> $log_dir/$id
